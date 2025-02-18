@@ -1,20 +1,16 @@
 import React from "react";
-import DaysName from "./components/FoodItems";
+import DaysName from "./components/DaysName";
+import ErrorMsgs from "./components/ErrorMsgs";
+import "./App.css";
 function App() {
-  let daysnames = [];
-  // let daysnames = ["Fri", "Sat"];
-  // if (daysnames.length === 0) {
-  //   return <h1>WORK ALL DAY, YOU ARE A SLAVE</h1>;
-  // }
-
-  // let workdays =
-  //   daysnames.length === 0 ? <h3>WORK ALL DAY, YOU ARE A SLAVE</h3> : null;
+  let daysnames = ["Fri", "Sat"];
+  // let daysnames = [];
 
   return (
     <>
-      <h1>Holiday</h1>
-      {daysnames.length === 0 && <h3>WORK ALL DAY, YOU ARE A SLAVE '_' </h3>}
-      <DaysName></DaysName>
+      <h1 className="heading">Holiday</h1>
+      <ErrorMsgs daysN={daysnames}></ErrorMsgs>
+      <DaysName daysN={daysnames}></DaysName>
     </>
   );
 }

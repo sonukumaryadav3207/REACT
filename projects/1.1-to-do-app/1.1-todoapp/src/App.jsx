@@ -13,7 +13,7 @@ function App() {
       duedate: "2025-02-20",
     },
     {
-      name: "Buy Groceries",
+      name: "Laern Node Also",
       duedate: "2025-02-20",
     },
   ];

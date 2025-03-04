@@ -12,17 +12,21 @@ function App() {
     },
   ];
 
-  const [todoitems, setTodoItems] = useState("");
+  const [todoItems, setTodoItems] = useState(initialtodoItems);
 
   const handleNewItem = (itemName, itemDueDate) => {
-    console.log(`OnNewItem : ${itemName} Date: ${itemDueDate}`);
+    const newTodoItems = [
+      ...todoItems,
+      { name: itemName, duedate: itemDueDate },
+    ];
+    setTodoItems(newTodoItems);
   };
   return (
     <center className="todo-container">
       <div className="container">
-        z<AppName></AppName>
+        <AppName></AppName>
         <AddTodo onNewItem={handleNewItem}></AddTodo>
-        <ContainsItem todoItems={initialtodoItems}></ContainsItem>
+        <ContainsItem todoItems={todoItems}></ContainsItem>
       </div>
     </center>
   );
